@@ -1,1 +1,92 @@
-<html><body>Gymbrawns is live.</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymbrawns Live</title>
+    <style>
+        .flexc{
+            display:flex;
+            flex-direction: column;
+            align-items:stretch;
+        }
+        .flexr{
+            display:flex;
+            flex-direction: row;
+            align-items:stretch;
+        }
+        .flex1{
+            flex:1;
+        }
+        .bg000{
+            background:black;
+        }
+
+        body{
+            margin:0;
+            width:100vw;
+            height:100vh;
+            overflow:hidden;
+        }
+        .fc{
+            height:100vh;
+            width:100vw;
+            background:linear-gradient(135deg, #0f5, #f05, #05f);
+            background-size:400% 400%;
+            animation: bgpos 10s infinite linear;
+        }
+        @keyframes bgpos {
+            
+            0% { background-position:0% 0%}
+            17% { background-position:33% 33%}
+            34% { background-position:66% 66%}
+            51% { background-position:100% 100%}
+            68% { background-position:66% 66%}
+            85% { background-position:33% 33%}
+            100% { background-position:0% 0%}
+        }
+        img{
+            max-height:50vh;
+            max-width:90vw;
+            /* opacity:0; */
+        }
+        .coming-soon{
+            font-size:min(5vw,40px);
+            letter-spacing: 1.4vw;
+            background:#000;
+            color:#fff;
+            text-align:center;
+            font-family: 'Courier New', Courier, monospace ;
+            font-weight: 600;
+        }
+        .coming, .soon, #dots{  
+            transition: all 0.3s linear;
+            display: inline-block;
+            white-space: pre;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="fc flexr">
+        <div class="flex1 bg000"></div>
+        <div class="flexc">
+            <div class="flex1 bg000"></div>
+            <img id="logo" src="img/logo.png">
+            <div class="coming-soon"><span class="coming">COMING</span> <span class="soon">SOON</span><span id="dots">...</span></div>
+            <div class="flex1 bg000"></div>
+        </div>
+        <div class="flex1 bg000"></div>
+    </div>
+    <script>
+        setInterval(function(){
+            var dots = document.getElementById("dots");
+            var d = ['   ', '.  ', '.. ', '...'];
+            var index = (d.indexOf(dots.innerHTML) + 1)%d.length;
+            dots.innerHTML = d[index];
+            
+        }, 500);
+    </script>
+</body>
+</html>
