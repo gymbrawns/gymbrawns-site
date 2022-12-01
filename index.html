@@ -20,7 +20,7 @@
             flex:1;
         }
         .bg000{
-            background:black;
+            color:transparent;
         }
 
         body{
@@ -28,13 +28,15 @@
             width:100vw;
             height:100vh;
             overflow:hidden;
+            background:url("img/gym.jpg");
+            background-size: 100% auto;
         }
         .fc{
             height:100vh;
             width:100vw;
-            background:linear-gradient(135deg, #0f5, #f05, #05f);
-            background-size:400% 400%;
-            animation: bgpos 10s infinite linear;
+            background:rgba(0,0,0,0.7);
+            /* background-size:400% 400%; */
+            /* animation: bgpos 10s infinite linear; */
         }
         @keyframes bgpos {
             
@@ -56,17 +58,30 @@
             padding-bottom:50px;
             font-size:min(5vw,40px);
             letter-spacing: 1.4vw;
-            background:#000;
-            color:#fff;
             text-align:center;
             font-family: 'Courier New', Courier, monospace ;
             font-weight: 600;
+            color:#fff;
         }
         .coming, .soon, #dots{  
             transition: all 0.3s linear;
             display: inline-block;
             white-space: pre;
             
+        }
+        .excited{
+            background:#000;
+            text-align:center;
+            color:#fff;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size:min(5vw,40px);
+            padding:20px;
+        }
+        @media only screen and (orientation:portrait) {
+            body{
+                background:url("img/gym.jpg");
+                background-size:auto 100%;
+            }
         }
     </style>
 </head>
@@ -78,6 +93,7 @@
             <img id="logo" src="img/logo.png">
             <div class="coming-soon"><span class="coming">COMING</span> <span class="soon">SOON</span><span id="dots">...</span></div>
             <div class="flex1 bg000"></div>
+            <!-- <div class="excited">Contact buttons here.</div> -->
         </div>
         <div class="flex1 bg000"></div>
     </div>
